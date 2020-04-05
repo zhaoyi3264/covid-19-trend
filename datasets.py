@@ -10,7 +10,6 @@ def str2num(i):
 def bno():
     '''
     Today's data from BNO `https://bnonews.com/index.php/2020/04/the-latest-coronavirus-cases/`
-    No time line
     '''
     from urllib.request import Request, urlopen
     from bs4 import BeautifulSoup
@@ -40,7 +39,6 @@ def pomber():
     Full timeline data from `https://pomber.github.io/covid19/timeseries.json`
     '''
     from urllib.request import Request, urlopen
-    from bs4 import BeautifulSoup
     import json
     import numpy as np
     import pandas as pd
@@ -66,4 +64,27 @@ def pomber():
     df.set_index(['Country', 'Date'], inplace=True)
     df.sort_values(['Country', 'Date'], inplace=True)
     df.columns = ['Cases', 'Deaths','Recovered']
+    return df
+
+def virus_tracker():
+    '''
+    Today's data from virus tracker ```https://thevirustracker.com/```
+    '''
+    from urllib.request import Request, urlopen
+    import json
+    import pandas as pd
+
+    req = Request('https://api.thevirustracker.com/free-api?countryTotals=ALL', headers=__headers)
+    with urlopen(req) as res:
+        data = json.load(res)
+
+    items = data['countryitems'][0]
+    if 'stat' in items:
+        del items['stat']
+    df = pd.DataFrame(items).T
+    df.drop(columns=['ourid', 'code', 'source'], inplace=True)
+    df.rename(columns=lambda name: name.replace('total_', '').title(), inplace=True)
+    df.set_index('Title', inplace=True)
+    df.index.name = 'Country'
+    df = df.applymap(int)
     return df
