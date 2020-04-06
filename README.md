@@ -8,6 +8,7 @@ Visualization of the COVID-19 trend with Matplotlib and GeoPandas
   -	[Others](#others)
 - [Graphs](#graphs)
   - [Global Situation](#global-situation)
+  - [Country Timeline](#country-timeline)
 # Sources
 ### Data
 - [Coronavirus Tracker](https://thevirustracker.com/)
@@ -31,3 +32,8 @@ Visualization of the COVID-19 trend with Matplotlib and GeoPandas
 - Total recovered
 ![recovered](global/recovered_map.png)
 ![recovered](global/recovered.png)
+
+### Country Timeline
+
+Please see [timeline.md](timeline.md).
+
