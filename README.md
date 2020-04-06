@@ -1,14 +1,36 @@
 # covid-19-trend
 
 Visualization of the COVID-19 trend with Matplotlib and GeoPandas
-
 # Contents
+- [Figures](#figures)
+  - [Today's Summary](#today's-summary)
+  - [Global Situation](#global-situation)
+  - [Country Timeline](#country-timeline)
 - [Sources](#sources)
   - [Data](#data)
   -	[Others](#others)
-- [Graphs](#graphs)
-  - [Global Situation](#global-situation)
-  - [Country Timeline](#country-timeline)
+# Figures
+### Today's Summary
+
+|   Cases | Recovered | Deaths | New Cases | New Deaths | Active Cases | Serious Cases |
+| ------: | --------: | -----: | --------: | ---------: | -----------: | ------------: |
+| 1265030 |    255118 |  69171 |     71124 |       4725 |       934324 |         45441 |
+
+![](global/today_new.png)
+
+### Global Situation
+
+- _**Total cases**_
+![cases](global/cases_map.png)
+![cases](global/cases.png)
+- _**Total deaths**_
+![deaths](global/deaths_map.png)
+![cases](global/deaths.png)
+- _**Total recovered**_
+![recovered](global/recovered_map.png)
+![recovered](global/recovered.png)
+### Country Timeline
+Please see [timeline.md](timeline.md).
 # Sources
 ### Data
 - [Coronavirus Tracker](https://thevirustracker.com/)
@@ -17,23 +39,3 @@ Visualization of the COVID-19 trend with Matplotlib and GeoPandas
 - [pomber/covid19](https://github.com/pomber/covid19)
 ### Others
 - [ISO 3166](https://www.iso.org/glossary-for-iso-3166.html)
-# Graphs
-### Global Situation
-- Total cases
-
-![cases](global/cases_map.png)
-![cases](global/cases.png)
-
-- Total deaths
-
-![deaths](global/deaths_map.png)
-![cases](global/deaths.png)
-
-- Total recovered
-![recovered](global/recovered_map.png)
-![recovered](global/recovered.png)
-
-### Country Timeline
-
-Please see [timeline.md](timeline.md).
-

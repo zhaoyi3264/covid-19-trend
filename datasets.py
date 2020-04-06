@@ -47,7 +47,7 @@ def pomber():
     req = Request('https://pomber.github.io/covid19/timeseries.json', headers=__headers)
     with urlopen(req) as res:
         data = json.load(res)
-    
+
     # concatenate DataFrames
     df = None
     for values in data.values():
@@ -55,11 +55,11 @@ def pomber():
             df = pd.DataFrame(values)
         else:
             df = df.append(pd.DataFrame(values))
-
+    df['date'] = df['date'].apply(pd.to_datetime)
     # add country column
     df['country'] = np.repeat(list(data.keys()), len(data['US']))
     df.rename(columns=str.title, inplace=True)
-    
+
     # set multi-index, sort, and alter columns
     df.set_index(['Country', 'Date'], inplace=True)
     df.sort_values(['Country', 'Date'], inplace=True)
@@ -88,3 +88,29 @@ def virus_tracker():
     df.index.name = 'Country'
     df = df.applymap(int)
     return df
+
+def jhu():
+    '''
+    Timeline data from CSSE at Johns Hopkins University `https://github.com/CSSEGISandData/COVID-19`
+    '''
+    from urllib.request import Request, urlopen
+    import pandas as pd
+    d = {
+    'Cases': 'https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',
+    'Deaths': 'https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv',
+    'Recovered': 'https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
+}
+    data = {}
+    for key, value in d.items():
+        req = Request(value, headers=__headers)
+        with urlopen(req) as res:
+            df = pd.read_html(res.read())[0].drop(columns=['Unnamed: 0', 'Lat', 'Long']).groupby("Country/Region").sum()
+        df.rename(columns=pd.to_datetime, inplace=True)
+        ser = df.unstack()
+        ser.index.names = ['Date', 'Country']
+        ser.name = key
+        data[key] = ser
+    countries = set(df.index)
+    df = pd.DataFrame(data).swaplevel()
+    df.sort_values(['Country', 'Date'], inplace=True)
+    return df, countries
