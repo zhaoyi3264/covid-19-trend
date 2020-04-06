@@ -1,20 +1,23 @@
 # covid-19-trend
 
 Visualization of the COVID-19 trend with Matplotlib and GeoPandas
+
+Updated twice a day (around 9 : 00 and 21 : 00)
+
 # Contents
 - [Figures](#figures)
-  - [Today's Summary](#today's-summary)
+  - [Summary of Today](#summary-of-today)
   - [Global Situation](#global-situation)
   - [Country Timeline](#country-timeline)
 - [Sources](#sources)
   - [Data](#data)
   -	[Others](#others)
 # Figures
-### Today's Summary
+### Summary of Today
 
 |   Cases | Recovered | Deaths | New Cases | New Deaths | Active Cases | Serious Cases |
 | ------: | --------: | -----: | --------: | ---------: | -----------: | ------------: |
-| 1265030 |    255118 |  69171 |     71124 |       4725 |       934324 |         45441 |
+|1280960 |      264697 |    70335 |             15968 |               1165 |         939511 |           45917 |
 
 ![](global/today_new.png)
 
@@ -30,7 +33,10 @@ Visualization of the COVID-19 trend with Matplotlib and GeoPandas
 ![recovered](global/recovered_map.png)
 ![recovered](global/recovered.png)
 ### Country Timeline
-Please see [timeline.md](timeline.md).
+Please see [timeline](timeline.md).
+
+### More Figures coming (hopefully)
+
 # Sources
 ### Data
 - [Coronavirus Tracker](https://thevirustracker.com/)
