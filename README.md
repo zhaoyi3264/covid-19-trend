@@ -2,12 +2,13 @@
 
 Visualization of the COVID-19 trend with Matplotlib and GeoPandas
 
-Updated twice a day (around 9 : 00 and 21 : 00)
+Updated twice a day (around 9 : 00 and 20 : 00)
 
 # Contents
 - [Figures](#figures)
   - [Summary of Today](#summary-of-today)
   - [Global Situation](#global-situation)
+  - [Growth of cases](#growth-of-cases)
   - [Country Timeline](#country-timeline)
 - [Sources](#sources)
   - [Data](#data)
@@ -15,9 +16,9 @@ Updated twice a day (around 9 : 00 and 21 : 00)
 # Figures
 ### Summary of Today
 
-|   Cases | Recovered | Deaths | New Cases | New Deaths | Active Cases | Serious Cases |
-| ------: | --------: | -----: | --------: | ---------: | -----------: | ------------: |
-|1280960 |      264697 |    70335 |             15968 |               1165 |         939511 |           45917 |
+|   Cases |   Recovered |   Deaths |   New Cases Today |   New Deaths Today |   Active Cases |   Serious Cases |
+|--------:|------------:|---------:|------------------:|-------------------:|---------------:|----------------:|
+| 1338368 |      271087 |    74424 |               515 |                 37 |         986440 |           47106 |
 
 ![](global/today_new.png)
 
@@ -32,7 +33,16 @@ Updated twice a day (around 9 : 00 and 21 : 00)
 - _**Total recovered**_
 ![recovered](global/recovered_map.png)
 ![recovered](global/recovered.png)
+### Growth of Cases
+
+![](global/cases_breakout_timeline.png)
+
+![](global/deaths_breakout_timeline.png)
+
+![](global/recovered_breakout_timeline.png)
+
 ### Country Timeline
+
 Please see [timeline](timeline.md).
 
 ### More Figures coming (hopefully)
