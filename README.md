@@ -19,6 +19,7 @@ Updated twice a day (around 9 : 00 and 20 : 00)
 |   Cases |   New cases |   Deaths |   New deaths |   Serious & Critical |   Recovered |
 |--------:|------------:|---------:|-------------:|---------------------:|------------:|
 | 1355131 |       12720 |    76703 |         2322 |                39673 |      285074 |
+
 ![](global/today_new.png)
 
 ### Global Situation
