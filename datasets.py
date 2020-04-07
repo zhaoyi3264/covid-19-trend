@@ -89,6 +89,28 @@ def virus_tracker():
     df = df.applymap(int)
     return df
 
+def virus_tracker_web():
+    from urllib.request import Request, urlopen
+    from bs4 import BeautifulSoup
+    import pandas as pd
+    
+    req = Request('https://thevirustracker.com/', headers=__headers)
+    with urlopen(req) as res:
+        html = res.read()
+    soup = BeautifulSoup(html.decode('latin-1'), 'html.parser')
+    table = soup.find_all('table')[1]
+    ths = [th.contents[-1].strip() for th in table.tr.find_all('th')][1:]
+    l = []
+    for tr in table.find_all('tr')[1:]:
+        tds = tr.find_all('td')[1:]
+        tds[0] = tds[0].a if tds[0].a != None else tds[0]
+        l.append(dict(zip(ths, [td.string for td in tds])))
+    df = pd.DataFrame(l)
+    df.set_index('Country', inplace=True)
+    df = df.applymap(lambda i: int(i.replace(',', '').replace('+', '')) if i!= None else 0)
+    df.rename(columns=lambda x: 'Cases' if x == 'Total' else x, inplace=True)
+    return df
+
 def jhu():
     '''
     Timeline data from CSSE at Johns Hopkins University `https://github.com/CSSEGISandData/COVID-19`

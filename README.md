@@ -12,13 +12,13 @@ Updated twice a day (around 9 : 00 and 20 : 00)
   - [Country Timeline](#country-timeline)
 - [Sources](#sources)
   - [Data](#data)
-  -	[Others](#others)
+  - [Others](#others)
 # Figures
 ### Summary of Today
 
-|   Cases |   New cases |   Deaths |   New deaths |   Serious & Critical |   Recovered |
-|--------:|------------:|---------:|-------------:|---------------------:|------------:|
-| 1355131 |       12720 |    76703 |         2322 |                39673 |      285074 |
+|   Cases |   New Cases |   Deaths |   New Deaths |   Recovered |   Active |   Serious |
+|--------:|------------:|---------:|-------------:|------------:|---------:|----------:|
+| 1386771 |       40767 |    79037 |         4383 |      297541 |  1010193 |     47693 |
 
 ![](global/today_new.png)
 
