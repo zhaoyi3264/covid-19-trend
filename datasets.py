@@ -30,7 +30,7 @@ def bno():
     df = pd.DataFrame(table[1:], columns=table[0])
     
     # clean data
-    df.set_index('WORLD', inplace=True)
+    df.set_index('LOCATION', inplace=True)
     today = df.applymap(str2num)
     return today
 

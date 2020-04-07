@@ -16,10 +16,9 @@ Updated twice a day (around 9 : 00 and 20 : 00)
 # Figures
 ### Summary of Today
 
-|   Cases |   Recovered |   Deaths |   New Cases Today |   New Deaths Today |   Active Cases |   Serious Cases |
-|--------:|------------:|---------:|------------------:|-------------------:|---------------:|----------------:|
-| 1338368 |      271087 |    74424 |               515 |                 37 |         986440 |           47106 |
-
+|   Cases |   New cases |   Deaths |   New deaths |   Serious & Critical |   Recovered |
+|--------:|------------:|---------:|-------------:|---------------------:|------------:|
+| 1355131 |       12720 |    76703 |         2322 |                39673 |      285074 |
 ![](global/today_new.png)
 
 ### Global Situation
