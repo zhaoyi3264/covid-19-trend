@@ -19,9 +19,7 @@ Updated twice a day (around 9 : 00 and 20 : 00)
 
 ### Summary of Today
 
-|   Cases |   New Cases |   Deaths |   New Deaths |   Recovered |   Active |   Serious |
-|--------:|------------:|---------:|-------------:|------------:|---------:|----------:|
-| 3400245 |        1805 |   239570 |          122 |     1080529 |  2079552 |     51351 |
+![summary](global/summary.png)
 
 ![](global/today_new.png)
 
